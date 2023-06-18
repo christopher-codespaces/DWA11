@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tally Count</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer type="module"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.4.0/dist/components/button/button.js"></script>
+  <style>
+    .counter__actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .counter__value {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .reset {
+      --sl-input-height-medium: 30px;
+      --sl-input-border-width: 1px;
+      background-color: transparent;
+      border: 1px solid #767474;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .reset:hover {
+      transform: scale(1.05);
+    }
+
+    .reset:active {
+      transform: scale(1.075) translateY(2px);
+      transition: 0.3ms;
+    }
+
+    .button {
+      --sl-input-height-medium: 48px;
+      --sl-input-border-width: 2px;
+      background-color: transparent;
+      color: white;
+      font-size: 1.125rem;
+    }
+
+    .add {
+      border-color: #05da09;
+    }
+
+    .subtract {
+      border-color: #fb2c2c;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .button:active {
+      transform: scale(1.075) translateY(2px) rotate(180deg);
+      transition: 0.3ms;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Tally Count</h1>
+  </header>
+  <main class="counter">
+    <dialog class="message" data-overlay>
+      <p align="center">The counter has been set to zero</p>
+    </dialog>
+    <input class="counter__value" readonly value="0" data-number />
+    <div class="counter__actions">
+      <sl-button class="button subtract" pill data-subtract>-</sl-button>
+      <sl-button class="reset" pill data-reset>Reset</sl-button>
+      <sl-button class="button add" pill data-add>+</sl-button>
+    </div>
+  </main>
+  <footer class="footer">
+    Inspired by
+    <a class="footer__link" href="https://tallycount.app/">Tally Count</a>,
+    Note that this is merely a student practice project for learning
+    JavaScript.
+  </footer>
+</body>
+</html>
